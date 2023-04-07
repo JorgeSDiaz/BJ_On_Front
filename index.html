@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Poker On</title>
+</head>
+<body onload="app.draw()">
+<div class="container-wrapper">
+    <div class="div-container">
+        <div class="container">21</div>
+        <div class="container">20</div>
+        <div class="container">19</div>
+        <div class="container">18</div>
+        <div class="container">17</div>
+        <div class="container">16</div>
+        <div class="container">15</div>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="canvas1"></canvas>
+        <canvas id="canvas2"></canvas>
+        <canvas id="canvas3"></canvas>
+        <canvas id="canvas4"></canvas>
+        <canvas id="canvas5"></canvas>
+        <canvas id="canvas6"></canvas>
+        <canvas id="canvas7"></canvas>
+    </div>
+</div>
+
+<!-- JQuery -->
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
