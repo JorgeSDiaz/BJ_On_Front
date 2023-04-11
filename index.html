@@ -13,6 +13,12 @@
     <title>Poker On</title>
 </head>
 <body onload="app.draw()">
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-danger" onclick="app.tokenSelected('red')">$10</button>
+    <button type="button" class="btn btn-warning" onclick="app.tokenSelected('yellow')">$50</button>
+    <button type="button" class="btn btn-primary" onclick="app.tokenSelected('blue')">$100</button>
+    <button type="button" class="btn btn-success" onclick="app.tokenSelected('#A1EB5B')">$500</button>
+</div>
 <div class="container-wrapper">
     <div class="div-container">
         <div class="container">21</div>

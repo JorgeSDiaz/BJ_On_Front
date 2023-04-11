@@ -34,9 +34,9 @@ const app = (() => {
         ctx.arc(token.x, token.y , 2, 0, 2 * Math.PI);
         ctx.fill();
     };
-
+    
     const addToken = (box, x, y) => {
-        let tokenArray;
+        let tokenArray = [];
         let color = "";
 
         switch (colorToken) {
@@ -65,7 +65,6 @@ const app = (() => {
         let newToken = Token(color, x, y);
         tokenArray.push(newToken);
         drawToken(box.context, tokenArray[tokenArray.length - 1]);
-
         reduceTokens(box, x, y);
     }
 
@@ -118,6 +117,7 @@ const app = (() => {
 
         Object.keys(boxes).forEach((key) => {
             let box = boxes[key];
+            let arrays = [];
 
             box.canvas.addEventListener('click', (event) => {
                 const rect = box.canvas.getBoundingClientRect();
@@ -125,7 +125,17 @@ const app = (() => {
                 const y = event.clientY - rect.top;
 
                 addToken(box, x, y);
+                
+                if (box.tenDollarsTokens.length >= 5) {
+                    box.context.clearRect(0, 0, box.canvas.width, box.canvas.height);
+                    box.tenDollarsTokens.length = 0;
 
+                    box.fiftyDollarsTokens.push(Token('yellow', x, y));
+                    arrays.push(box.fiftyDollarsTokens);
+                }
+
+                updateBoxTokens(box, arrays);
+                
                 console.log("Id: " + box.id + ", $10: " + box.tenDollarsTokens.length + ", " +
                     "$50: " + box.fiftyDollarsTokens.length + ", $100: " + box.oneHundredDollarsTokens.length +
                     ", $500: " + box.fiveHundredDollarsTokens.length);
