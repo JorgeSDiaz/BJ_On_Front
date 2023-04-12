@@ -13,32 +13,46 @@
     <title>Poker On</title>
 </head>
 <body onload="app.draw()">
-<div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-danger" onclick="app.tokenSelected('red')">$10</button>
-    <button type="button" class="btn btn-warning" onclick="app.tokenSelected('yellow')">$50</button>
-    <button type="button" class="btn btn-primary" onclick="app.tokenSelected('blue')">$100</button>
-    <button type="button" class="btn btn-success" onclick="app.tokenSelected('#A1EB5B')">$500</button>
-</div>
-<div class="container-wrapper">
-    <div class="div-container">
-        <div class="container">21</div>
-        <div class="container">20</div>
-        <div class="container">19</div>
-        <div class="container">18</div>
-        <div class="container">17</div>
-        <div class="container">16</div>
-        <div class="container">15</div>
-    </div>
-
-    <div class="canvas-container">
-        <canvas id="canvas1"></canvas>
-        <canvas id="canvas2"></canvas>
-        <canvas id="canvas3"></canvas>
-        <canvas id="canvas4"></canvas>
-        <canvas id="canvas5"></canvas>
-        <canvas id="canvas6"></canvas>
-        <canvas id="canvas7"></canvas>
-    </div>
+    <header>
+        <div class="logo">
+            <h2 class="titulo">Mesa</h2>
+        </div>
+        <nav>
+            <a href="" class="nav-link">Configuración</a>
+            <a href="" class="nav-link">Salir</a>
+        </nav>
+    </header>
+<div class="principal">
+    <div class="left">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-danger" onclick="app.tokenSelected('red')">$10</button>
+            <button type="button" class="btn btn-warning" onclick="app.tokenSelected('yellow')">$50</button>
+            <button type="button" class="btn btn-primary" onclick="app.tokenSelected('blue')">$100</button>
+            <button type="button" class="btn btn-success" onclick="app.tokenSelected('#A1EB5B')">$500</button>
+        </div>
+        <div class="div-container">
+            <div class="container">21</div>
+            <div class="container">20</div>
+            <div class="container">19</div>
+            <div class="container">18</div>
+            <div class="container">17</div>
+            <div class="container">16</div>
+            <div class="container">15</div>
+        </div>
+    
+        <div class="canvas-container">
+            <canvas id="canvas1"></canvas>
+            <canvas id="canvas2"></canvas>
+            <canvas id="canvas3"></canvas>
+            <canvas id="canvas4"></canvas>
+            <canvas id="canvas5"></canvas>
+            <canvas id="canvas6"></canvas>
+            <canvas id="canvas7"></canvas>
+        </div>
+    </div>   
+    <div class="right">
+        <canvas class= "tablero" id="canvasTabla" width="600" height="350"></canvas>
+    </div> 
 </div>
 
 <!-- JQuery -->
@@ -46,5 +60,17 @@
 <!-- Bootstrap -->
 <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="app.js"></script>
+<script>
+    var fichas = [];
+        var canvasTabla = document.getElementById("canvasTabla");
+        var ctxTabla = canvasTabla.getContext("2d");
+        var tablaImg = new Image();
+  
+        tablaImg.onload = function() {
+            ctxTabla.drawImage(tablaImg, 0, 0, canvasTabla.width, canvasTabla.height);
+        };
+  
+        tablaImg.src = "src/tabla2.png";
+</script>
 </body>
 </html>
