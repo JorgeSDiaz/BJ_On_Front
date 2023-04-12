@@ -31,7 +31,7 @@ const app = (() => {
     const drawToken = (ctx, token) => {
         ctx.fillStyle = token.color;
         ctx.beginPath();
-        ctx.arc(token.x, token.y , 2, 0, 2 * Math.PI);
+        ctx.arc(token.x, token.y , 5, 0, 2 * Math.PI);
         ctx.fill();
     };
     

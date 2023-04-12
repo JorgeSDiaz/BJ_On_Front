@@ -1,0 +1,54 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #aaaaaa;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login {
+    background-color: #108916;
+    padding: 40px;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"], input[type="password"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    margin: 8px;
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: #5cb85c;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.boton{
+    margin-top: 10px;
+}
+
+header{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: flex;
+    height: 30px;
+    background-color: #108916;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    padding: 20px;
+  }
